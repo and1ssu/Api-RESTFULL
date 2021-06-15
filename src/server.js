@@ -8,7 +8,8 @@ const routes = require('./router')
 
 const server = express();
 server.use(cors());
-server.use(bodyParser.urlencoded({extended:false}));
+server.use( express.urlencoded({extended: true}));
+server.use(express.json())
 server.use('/api', routes)
 
 
