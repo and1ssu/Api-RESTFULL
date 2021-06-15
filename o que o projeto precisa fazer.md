@@ -67,8 +67,8 @@ formaComercializacao
 
 /proposalsitem
 id
-idProposta
-idProduto
+propostaid
+produtoid
 quantidade
 valorUnitario
 desconto
