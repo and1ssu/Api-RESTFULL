@@ -26,11 +26,11 @@ module.exports = {
         });
     },
     
-    add: ({id, descricao, descritivo, valorVenda, tipos, formaComercializacao}) => {
+    add: ({id, descricao, descritivo, valorvenda, tipos, formacomercializacao}) => {
      
         return new Promise((resolve, reject) => {
-            db.query('INSERT INTO productsandservice (id, descricao, descritivo, valorVenda, tipos, formaComercializacao) VALUES (?,?,?,?,?,?)',
-                [id, descricao, descritivo, valorVenda, tipos, formaComercializacao], (error, results) => {
+            db.query('INSERT INTO productsandservice (id, descricao, descritivo, valorvenda, tipos, formacomercializacao) VALUES (?,?,?,?,?,?)',
+                [id, descricao, descritivo, valorvenda, tipos, formacomercializacao], (error, results) => {
                     if (error) { reject(error); return; }
                     // console.log(cliente)
                     resolve(results.insertId)
@@ -40,11 +40,11 @@ module.exports = {
 
         })
     }, 
-    update: ({id, descricao, descritivo, valorVenda, tipos, formaComercializacao}) =>{
+    update: ({id, descricao, descritivo, valorvenda, tipos, formacomercializacao}) =>{
     
         return new Promise((resolve, reject) => {
-            db.query('UPDATE productsandservice SET  descricao = ?, descritivo = ? , valorVenda = ?, tipos = ?, formaComercializacao = ?  WHERE id = ?',
-                [ id, descricao, descritivo, valorVenda, tipos, formaComercializacao], (error, results) => {
+            db.query('UPDATE productsandservice SET  descricao = ?, descritivo = ? , valorvenda = ?, tipos = ?, formacomercializacao = ?  WHERE id = ?',
+                [  descricao, descritivo, valorvenda, tipos, formacomercializacao, id], (error, results) => {
                     if (error) { reject(error); return; }
                     // console.log(cliente)
                     resolve(results);

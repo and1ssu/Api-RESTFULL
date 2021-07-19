@@ -35,9 +35,9 @@ module.exports = {
             id: req.params.id,
             descricao: req.body.descricao,
             descritivo: req.body.descritivo,
-            valorVenda: req.body.valorVenda,
+            valorvenda: req.body.valorvenda,
             tipos: req.body.tipos,
-            formaComercializacao: req.body.formaComercializacao
+            formacomercializacao: req.body.formacomercializacao
         }
         if (prodservice) {
             let prodserviceId = await ProductsandServiceService.add(prodservice);
@@ -58,9 +58,9 @@ module.exports = {
             id: req.params.id,
             descricao: req.body.descricao,
             descritivo: req.body.descritivo,
-            valorVenda: req.body.valorVenda,
+            valorvenda: req.body.valorvenda,
             tipos: req.body.tipos,
-            formaComercializacao: req.body.formaComercializacao
+            formacomercializacao: req.body.formacomercializacao
            
         }
         if (prodservice) {

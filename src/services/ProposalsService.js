@@ -4,7 +4,7 @@ const db = require('../db')
 module.exports = {
     getAll: () => {
         return new Promise((resolve, reject) => {
-            db.query('SELECT * FROM proposals', (error, results) => {
+            db.query('SELECT * FROM dwattei.proposals as p inner join dwattei.clients as c on p.idclient = c.idclients', (error, results) => {
                 if (error) { reject(error); return; }
                 // console.log(results)
                 resolve(results);
@@ -26,8 +26,7 @@ module.exports = {
         });
     },
    
-    add: ({id, codigo, assunto, data, datavalidade, idclient}) => {
-     
+    add: ({id, codigo, assunto, data, datavalidade, idclient}) => {     
         return new Promise((resolve, reject) => {
             db.query('INSERT INTO proposals (id, codigo, assunto, data, datavalidade, idclient) VALUES (?, ?, ?, ?, ?, ?)',
                 [id, codigo, assunto, data, datavalidade, idclient], (error, results) => {
@@ -40,8 +39,7 @@ module.exports = {
 
         })
     }, 
-    update: ({id, codigo, assunto, data, datavalidade, idclient}) =>{
-    
+    update: ({id, codigo, assunto, data, datavalidade, idclient}) =>{    
         return new Promise((resolve, reject) => {
             db.query('UPDATE proposals SET  codigo = ?, assunto = ? , data = ?, datavalidade = ?,  idclient = ? WHERE id = ?',
                 [  codigo, assunto, data, datavalidade, idclient, id], (error, results) => {
